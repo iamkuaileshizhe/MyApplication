@@ -8,11 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    @BindView(R.id.btn_click)
     Button btn_click ;
+    @BindView(R.id.txt_show)
     TextView txt_show;
 
 
@@ -20,34 +24,36 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn_click =findViewById(R.id.btn_click);
-        txt_show =findViewById(R.id.txt_show);
+        ButterKnife.bind(this);
+//        btn_click =findViewById(R.id.btn_click);
+//        txt_show =findViewById(R.id.txt_show);
+//
+//
+//        txt_show.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public  void onClick(View view){
+//                txt_show.setText("哈哈，我又变了");
+//            }
+//        });
+        btn_click.setOnClickListener(this);
+        txt_show.setOnClickListener(this);
 
 
-        txt_show.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public  void onClick(View view){
-                txt_show.setText("哈哈，我又变了");
-            }
-        });
-        btn_click.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
+
+
+    @Override
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.btn_click :
                 Toast.makeText(getApplicationContext(),"你好啊 ！我是神",Toast.LENGTH_LONG).show();
-                Log.i("d","h啊哈哈哈");
-                txt_show.setText("哈哈哈，我变了");
-//                Intent intent  = new Intent(MainActivity.this,TestActivity.class);
-//                startActivity(intent);
-            }
-        });
-        txt_show.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                txt_show.setText("你快压死我啦");
-                return true;
-            }
-        });
+                break;
+            case R.id.txt_show :
+                Toast.makeText(getApplicationContext(),"你好啊 ！我是谁",Toast.LENGTH_LONG).show();
+                break;
+            default:
+                break;
 
-
+        }
     }
 }
