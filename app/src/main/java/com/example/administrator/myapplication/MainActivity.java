@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.btn_click :
                 Toast.makeText(getApplicationContext(),"你好啊 ！我是神",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this,TestActivity.class);
+                startActivity(intent);
                 break;
             case R.id.txt_show :
                 Toast.makeText(getApplicationContext(),"你好啊 ！我是谁",Toast.LENGTH_LONG).show();
