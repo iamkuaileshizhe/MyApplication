@@ -1,6 +1,9 @@
 package com.example.administrator.myapplication;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -8,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * @param
@@ -20,13 +25,19 @@ import android.widget.Toast;
 public class TestActivity extends AppCompatActivity {
     Button btn_click1 ;
     TextView txt_show1;
-
+    @BindView(R.id.btn_call)
+    Button btn_call;
+    @BindView(R.id.btn_showCall)
+    Button btn_showCall;
+    @BindView(R.id.btn_show)
+    Button btn_show;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("testActivit","------------------------------activiti创建");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        ButterKnife.bind(this);
         btn_click1 = findViewById(R.id.btn_click1);
         txt_show1 = findViewById(R.id.txt_show1);
 
@@ -47,7 +58,14 @@ public class TestActivity extends AppCompatActivity {
         txt_show1.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                txt_show1.setText("你快压死我啦");
+//                txt_show1.setText("你快压死我啦");
+                if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//              // We don't have permission so prompt the user如果我们没有权限就弹出提示请求用户赋予权限
+                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1);
+                }
+
+                Intent call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:18953186913"));
+                startActivity(call);
                 return true;
             }
         });
@@ -57,6 +75,45 @@ public class TestActivity extends AppCompatActivity {
                 Intent intent = new Intent(TestActivity.this,MainActivity.class);
                 startActivity(intent);
                 return true;
+            }
+        });
+
+        btn_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//              // We don't have permission so prompt the user如果我们没有权限就弹出提示请求用户赋予权限
+                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1);
+                }
+
+                Intent call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:18953186913"));
+                startActivity(call);
+            }
+        });
+
+        btn_showCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//              // We don't have permission so prompt the user如果我们没有权限就弹出提示请求用户赋予权限
+                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1);
+                }
+
+                Intent call = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:18953186913"));
+                startActivity(call);
+            }
+        });
+
+        btn_show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//              // We don't have permission so prompt the user如果我们没有权限就弹出提示请求用户赋予权限
+                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1);
+                }
+
+                Intent call = new Intent("com.android.phone.action.TOUCH_DIALER");
+                startActivity(call);
             }
         });
     }
