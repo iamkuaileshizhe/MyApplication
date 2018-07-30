@@ -7,32 +7,124 @@
         android:layout_height="match_parent"
         tools:context="com.example.administrator.myapplication.MainActivity">
 
-    <TextView android:id="@+id/txt_show1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello new View1111111!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-    <Button android:id="@+id/btn_click1" android:layout_height="wrap_content" android:text="我是新的点我哦" android:layout_width="wrap_content"></Button>
-    <Button
-            android:text="拨打电话"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btn_call"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/btn_showCall"/>
-    <Button
-            android:text="拨号页面"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btn_showCall"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/btn_click1"/>
-    <Button
-            android:text="拨号"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_show" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/btn_call"/>
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+            <LinearLayout android:layout_width="match_parent" android:orientation="vertical"
+                          android:layout_height="wrap_content">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="150px" android:orientation="horizontal"
+                              android:gravity="center">
+
+                    <Button android:id="@+id/btn_click1"
+                            android:layout_height="wrap_content"
+                            android:text="我是新的点我哦"
+                            android:layout_width="wrap_content"></Button>
+                    <Button
+                            android:text="拨打电话"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/btn_call"
+                            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                    />
+                    <Button
+                            android:text="拨号页面"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/btn_showCall"
+                            android:layout_marginStart="8dp"
+                    />
+                    <Button
+                            android:text="拨号"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btn_show"
+                            android:layout_marginStart="8dp"
+                    />
+
+                </LinearLayout>
+
+
+                <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
+                              android:layout_height="wrap_content">
+                    <TextView android:id="@+id/txt_show1"
+                              android:layout_width="match_parent"
+                              android:layout_height="match_parent"
+                              android:padding="4dp" android:textSize="18dp" android:gravity="center"
+                              android:text="Hello new View1111111!"
+                    />
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
+                              android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="姓名："/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
+                              android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="电话"/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
+                              android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="备注"/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签1"/>
+                    <EditText android:layout_width="261dp" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签2"/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签3"/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签4"/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签5"/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签6"/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签7"/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签8"/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签9"/>
+                    <EditText android:layout_width="wrap_content" android:layout_weight="3"
+                              android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+
 
 </android.support.constraint.ConstraintLayout>
