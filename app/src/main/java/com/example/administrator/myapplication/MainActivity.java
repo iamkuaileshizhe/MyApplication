@@ -3,7 +3,6 @@ package com.example.administrator.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,6 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_click ;
     @BindView(R.id.txt_show)
     TextView txt_show;
+    @BindView(R.id.btn_clickForAutoEdit)
+    Button btn_clickForAutoEdit;
 
 
     @Override
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            }
 //        });
         btn_click.setOnClickListener(this);
+        btn_clickForAutoEdit.setOnClickListener(this);
         txt_show.setOnClickListener(this);
 
 
@@ -47,11 +49,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.btn_click :
                 Toast.makeText(getApplicationContext(),"你好啊 ！我是神",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this,TestActivity.class);
+                Intent intent = new Intent(MainActivity.this,EditTestActivity.class);
                 startActivity(intent);
                 break;
             case R.id.txt_show :
                 Toast.makeText(getApplicationContext(),"你好啊 ！我是谁",Toast.LENGTH_LONG).show();
+                break;
+            case  R.id.btn_clickForAutoEdit:
+                Intent intent1 = new Intent(MainActivity.this,AutoEditTestActivity.class);
+                startActivity(intent1);
                 break;
             default:
                 break;

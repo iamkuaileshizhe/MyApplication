@@ -6,15 +6,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.administrator.myapplication.MainActivity">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp"
+                android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <Button android:id="@+id/btn_click" android:layout_height="wrap_content" android:text="文本框练习页面" android:layout_width="wrap_content"></Button>
 
-    <TextView android:id="@+id/txt_show"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-    <Button android:id="@+id/btn_click" android:layout_height="wrap_content" android:text="点我啊" android:layout_width="wrap_content"></Button>
+                <Button android:id="@+id/btn_clickForAutoEdit" android:layout_height="wrap_content" android:text="自动填充框练习页面" android:layout_marginStart="8dp" android:layout_width="wrap_content"></Button>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:id="@+id/txt_show"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Hello World!"
+                          app:layout_constraintBottom_toBottomOf="parent"
+                          app:layout_constraintLeft_toLeftOf="parent"
+                          app:layout_constraintRight_toRightOf="parent"
+                          app:layout_constraintTop_toTopOf="parent"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </android.support.constraint.ConstraintLayout>

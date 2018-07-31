@@ -8,9 +8,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
  * @date 2018-07-05 13:14
  * @update
  */
-public class TestActivity extends AppCompatActivity {
+public class EditTestActivity extends AppCompatActivity {
     Button btn_click1 ;
     TextView txt_show1;
     @BindView(R.id.btn_call)
@@ -36,7 +36,7 @@ public class TestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("testActivit","------------------------------activiti创建");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_edittest);
         ButterKnife.bind(this);
         btn_click1 = findViewById(R.id.btn_click1);
         txt_show1 = findViewById(R.id.txt_show1);
@@ -72,7 +72,7 @@ public class TestActivity extends AppCompatActivity {
         btn_click1.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                Intent intent = new Intent(TestActivity.this,MainActivity.class);
+                Intent intent = new Intent(EditTestActivity.this,MainActivity.class);
                 startActivity(intent);
                 return true;
             }
@@ -116,6 +116,19 @@ public class TestActivity extends AppCompatActivity {
                 startActivity(call);
             }
         });
+
+        //--------------------------------------------输入上移参数测试 START----------------------------------------------
+        //弹出输入法时，界面会上移，默认值
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        //弹出输入法时，阻止界面上移
+//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
+
+        //弹出输入法时不显示标题，界面会上移
+//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        //弹出输入法时，显示标题，界面会上移，效果同resize一样
+//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_UNSPECIFIED);
+
+        //--------------------------------------------输入上移参数测试 END------------------------------------------------
     }
 
     @Override

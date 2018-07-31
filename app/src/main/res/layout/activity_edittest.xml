@@ -18,7 +18,7 @@
 
                     <Button android:id="@+id/btn_click1"
                             android:layout_height="wrap_content"
-                            android:text="我是新的点我哦"
+                            android:text="我是新的"
                             android:layout_width="wrap_content"></Button>
                     <Button
                             android:text="拨打电话"
@@ -57,69 +57,69 @@
                               android:layout_height="wrap_content">
                     <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="姓名："/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="text"/>
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
                               android:layout_height="wrap_content">
                     <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="电话"/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="textPhonetic"/>
 
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:orientation="horizontal"
                               android:layout_height="wrap_content">
                     <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="备注"/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="textEmailAddress"/>
                 </LinearLayout>
 
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
                     <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签1"/>
                     <EditText android:layout_width="261dp" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="numberSigned"/>
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签2"/>
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="密码"/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="textPassword"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签3"/>
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="数字"/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="number"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签4"/>
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="日期"/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="date"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签5"/>
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="时间"/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="datetime"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签6"/>
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="web密码"/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content"  android:inputType="textWebPassword"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签7"/>
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="数字密码"/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="numberPassword"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签8"/>
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="数字精度"/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="numberDecimal"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="标签9"/>
+                    <TextView android:layout_width="120dp" android:layout_height="wrap_content" android:text="多行文本"/>
                     <EditText android:layout_width="wrap_content" android:layout_weight="3"
-                              android:layout_height="wrap_content"/>
+                              android:layout_height="wrap_content" android:inputType="textMultiLine"/>
                 </LinearLayout>
             </LinearLayout>
 
