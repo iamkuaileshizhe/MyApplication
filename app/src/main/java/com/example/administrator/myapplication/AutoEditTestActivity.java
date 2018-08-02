@@ -23,7 +23,7 @@ public class AutoEditTestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_autoedittest);
         ButterKnife.bind(this);
-        String[] autoString = new String[]{"北京","上海","山东省"};
+        String[] autoString = new String[]{"北京","上海","山东省","山东省济南市"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,autoString);
         AutoCompleteTextView autoCompleteTextView = findViewById(R.id.autoEdit);
         autoCompleteTextView.setAdapter(adapter);

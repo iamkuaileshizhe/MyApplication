@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView txt_show;
     @BindView(R.id.btn_clickForAutoEdit)
     Button btn_clickForAutoEdit;
+    @BindView(R.id.btn_clickForButton)
+    Button btn_clickForButton;
 
 
     @Override
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_click.setOnClickListener(this);
         btn_clickForAutoEdit.setOnClickListener(this);
         txt_show.setOnClickListener(this);
+        btn_clickForButton.setOnClickListener(this);
 
 
     }
@@ -58,6 +61,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case  R.id.btn_clickForAutoEdit:
                 Intent intent1 = new Intent(MainActivity.this,AutoEditTestActivity.class);
                 startActivity(intent1);
+                break;
+            case  R.id.btn_clickForButton:
+                Intent intent2 = new Intent(MainActivity.this,ButtonTestActivity.class);
+                startActivity(intent2);
                 break;
             default:
                 break;

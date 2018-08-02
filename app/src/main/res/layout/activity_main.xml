@@ -15,6 +15,12 @@
                 <Button android:id="@+id/btn_clickForAutoEdit" android:layout_height="wrap_content" android:text="自动填充框练习页面" android:layout_marginStart="8dp" android:layout_width="wrap_content"></Button>
             </LinearLayout>
 
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <Button android:id="@+id/btn_clickForButton" android:layout_height="wrap_content" android:text="按钮练习页面" android:layout_width="wrap_content"></Button>
+
+            </LinearLayout>
+
+
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
                 <TextView android:id="@+id/txt_show"
                           android:layout_width="wrap_content"
