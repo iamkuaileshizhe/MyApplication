@@ -97,10 +97,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (cursor != null) {
             int count = 0;
             while (cursor.moveToNext()) {
-                count +=1;
-                if(count > 0){
+
+                if(count >10){
                     break;
                 }
+                count +=1;
                 String address = cursor.getString(cursor.getColumnIndex("address"));
                 String date = cursor.getString(cursor.getColumnIndex("date"));
                 String body = cursor.getString(cursor.getColumnIndex("body"));
