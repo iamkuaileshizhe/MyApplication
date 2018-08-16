@@ -1,8 +1,12 @@
-package com.example.administrator.myapplication;
+package com.example.administrator.myApp;
 
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_clickForAutoEdit;
     @BindView(R.id.btn_clickForButton)
     Button btn_clickForButton;
+
+    @BindView(R.id.btn_readSMS)
+    Button btn_readSMS;
 
 
     @Override
@@ -42,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_clickForAutoEdit.setOnClickListener(this);
         txt_show.setOnClickListener(this);
         btn_clickForButton.setOnClickListener(this);
+        btn_readSMS.setOnClickListener(this);
 
 
     }
@@ -66,9 +74,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent2 = new Intent(MainActivity.this,ButtonTestActivity.class);
                 startActivity(intent2);
                 break;
+            case R.id.btn_readSMS:
+                readSms();
+                break;
             default:
                 break;
 
         }
+    }
+
+
+    public void readSms(){
+       //获取内容提供者
+        ContentResolver contentResolver = getContentResolver();
+        //获取短信表的路径
+        Uri uri = Uri.parse("content://sms");
+        //设置要查询的列名
+        String[] line = {"address", "date", "body"};
+        //各个参数的意思，路径、列名、条件、条件参数、排序
+        Cursor cursor = contentResolver.query(uri, line, null ,null, null);
+        //下面就跟操作普通数据库一样了
+        if (cursor != null) {
+            int count = 0;
+            while (cursor.moveToNext()) {
+                count +=1;
+                if(count > 0){
+                    break;
+                }
+                String address = cursor.getString(cursor.getColumnIndex("address"));
+                String date = cursor.getString(cursor.getColumnIndex("date"));
+                String body = cursor.getString(cursor.getColumnIndex("body"));
+                Toast.makeText(getApplicationContext(),"address:" + address + " date:" + date + " body:" + body,Toast.LENGTH_LONG).show();
+                Log.e("短信", "address:" + address + " date:" + date + " body:" + body);
+            }
+            cursor.close();
+        }
+
     }
 }

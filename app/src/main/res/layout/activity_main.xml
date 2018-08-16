@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.administrator.myapplication.MainActivity">
+        tools:context="com.example.administrator.myApp.MainActivity">
     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp"
                 android:orientation="vertical">
         <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
@@ -17,6 +17,10 @@
 
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
                 <Button android:id="@+id/btn_clickForButton" android:layout_height="wrap_content" android:text="按钮练习页面" android:layout_width="wrap_content"></Button>
+
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <Button android:id="@+id/btn_readSMS" android:layout_height="wrap_content" android:text="读取短信" android:layout_width="wrap_content"></Button>
 
             </LinearLayout>
 

@@ -1,6 +1,5 @@
-package com.example.administrator.myapplication;
+package com.example.administrator.myApp;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
