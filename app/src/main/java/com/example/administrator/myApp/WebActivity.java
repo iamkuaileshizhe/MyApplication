@@ -4,38 +4,32 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class WebActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @BindView(R.id.btn_click)
-    Button btn_click ;
-    @BindView(R.id.txt_show)
-    TextView txt_show;
-    @BindView(R.id.btn_clickForAutoEdit)
-    Button btn_clickForAutoEdit;
-    @BindView(R.id.btn_clickForButton)
-    Button btn_clickForButton;
+    @BindView(R.id.web_show)
+    WebView web_show ;
 
-    @BindView(R.id.btn_readSMS)
-    Button btn_readSMS;
-    @BindView(R.id.btn_openWeb)
-    Button btn_openWeb;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_web);
         ButterKnife.bind(this);
 //        btn_click =findViewById(R.id.btn_click);
 //        txt_show =findViewById(R.id.txt_show);
@@ -47,12 +41,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                txt_show.setText("哈哈，我又变了");
 //            }
 //        });
-        btn_click.setOnClickListener(this);
-        btn_clickForAutoEdit.setOnClickListener(this);
-        txt_show.setOnClickListener(this);
-        btn_clickForButton.setOnClickListener(this);
-        btn_readSMS.setOnClickListener(this);
-        btn_openWeb.setOnClickListener(this);
+        web_show.loadUrl("http://www.baidu.com");
+        web_show.getSettings().setJavaScriptEnabled(true);//加上这一行为响应式的
+        web_show.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view,String url){
+                view.loadUrl(url);
+                return true;//返回ture 立即跳转，返回false打开网页有延时
+            }
+        });
 
 
     }
@@ -63,26 +60,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.btn_click :
                 Toast.makeText(getApplicationContext(),"你好啊 ！我是神",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this,EditTestActivity.class);
+                Intent intent = new Intent(WebActivity.this,EditTestActivity.class);
                 startActivity(intent);
                 break;
             case R.id.txt_show :
                 Toast.makeText(getApplicationContext(),"你好啊 ！我是谁",Toast.LENGTH_LONG).show();
                 break;
             case  R.id.btn_clickForAutoEdit:
-                Intent intent1 = new Intent(MainActivity.this,AutoEditTestActivity.class);
+                Intent intent1 = new Intent(WebActivity.this,AutoEditTestActivity.class);
                 startActivity(intent1);
                 break;
             case  R.id.btn_clickForButton:
-                Intent intent2 = new Intent(MainActivity.this,ButtonTestActivity.class);
+                Intent intent2 = new Intent(WebActivity.this,ButtonTestActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.btn_readSMS:
                 readSms();
-                break;
-            case  R.id.btn_openWeb:
-                Intent intent3 = new Intent(MainActivity.this,WebActivity.class);
-                startActivity(intent3);
                 break;
             default:
                 break;
